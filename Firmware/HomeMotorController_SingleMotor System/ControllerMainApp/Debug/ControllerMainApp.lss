@@ -1,0 +1,254 @@
+
+ControllerMainApp.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000fc  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  000000fc  00000190  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  00800062  00800062  00000192  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000192  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000048  00000000  00000000  000001c2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000002f6  00000000  00000000  0000020a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000170  00000000  00000000  00000500  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000001cd  00000000  00000000  00000670  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000074  00000000  00000000  00000840  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002e2  00000000  00000000  000008b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000131  00000000  00000000  00000b96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  00000cc7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	2c c0       	rjmp	.+88     	; 0x5c <__bad_interrupt>
+   4:	2b c0       	rjmp	.+86     	; 0x5c <__bad_interrupt>
+   6:	2a c0       	rjmp	.+84     	; 0x5c <__bad_interrupt>
+   8:	29 c0       	rjmp	.+82     	; 0x5c <__bad_interrupt>
+   a:	28 c0       	rjmp	.+80     	; 0x5c <__bad_interrupt>
+   c:	27 c0       	rjmp	.+78     	; 0x5c <__bad_interrupt>
+   e:	26 c0       	rjmp	.+76     	; 0x5c <__bad_interrupt>
+  10:	25 c0       	rjmp	.+74     	; 0x5c <__bad_interrupt>
+  12:	24 c0       	rjmp	.+72     	; 0x5c <__bad_interrupt>
+  14:	23 c0       	rjmp	.+70     	; 0x5c <__bad_interrupt>
+  16:	22 c0       	rjmp	.+68     	; 0x5c <__bad_interrupt>
+  18:	21 c0       	rjmp	.+66     	; 0x5c <__bad_interrupt>
+  1a:	20 c0       	rjmp	.+64     	; 0x5c <__bad_interrupt>
+  1c:	1f c0       	rjmp	.+62     	; 0x5c <__bad_interrupt>
+  1e:	1e c0       	rjmp	.+60     	; 0x5c <__bad_interrupt>
+  20:	1d c0       	rjmp	.+58     	; 0x5c <__bad_interrupt>
+  22:	1c c0       	rjmp	.+56     	; 0x5c <__bad_interrupt>
+  24:	1b c0       	rjmp	.+54     	; 0x5c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	ec ef       	ldi	r30, 0xFC	; 252
+  3a:	f0 e0       	ldi	r31, 0x00	; 0
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+  42:	a2 36       	cpi	r26, 0x62	; 98
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <__SP_H__>
+
+00000048 <__do_clear_bss>:
+  48:	20 e0       	ldi	r18, 0x00	; 0
+  4a:	a2 e6       	ldi	r26, 0x62	; 98
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	01 c0       	rjmp	.+2      	; 0x52 <.do_clear_bss_start>
+
+00000050 <.do_clear_bss_loop>:
+  50:	1d 92       	st	X+, r1
+
+00000052 <.do_clear_bss_start>:
+  52:	a3 36       	cpi	r26, 0x63	; 99
+  54:	b2 07       	cpc	r27, r18
+  56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
+  58:	38 d0       	rcall	.+112    	; 0xca <main>
+  5a:	4e c0       	rjmp	.+156    	; 0xf8 <_exit>
+
+0000005c <__bad_interrupt>:
+  5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
+
+0000005e <app_delay_ms>:
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  5e:	e7 ea       	ldi	r30, 0xA7	; 167
+  60:	f1 e6       	ldi	r31, 0x61	; 97
+  62:	31 97       	sbiw	r30, 0x01	; 1
+  64:	f1 f7       	brne	.-4      	; 0x62 <app_delay_ms+0x4>
+  66:	00 c0       	rjmp	.+0      	; 0x68 <app_delay_ms+0xa>
+  68:	00 00       	nop
+void app_delay_ms(unsigned short delay)
+{
+	do
+	{
+		_delay_ms(100);
+		delay-=100;
+  6a:	84 56       	subi	r24, 0x64	; 100
+  6c:	91 09       	sbc	r25, r1
+	}while(delay >100);
+  6e:	85 36       	cpi	r24, 0x65	; 101
+  70:	91 05       	cpc	r25, r1
+  72:	a8 f7       	brcc	.-22     	; 0x5e <app_delay_ms>
+	
+}
+  74:	08 95       	ret
+
+00000076 <handleInputPins>:
+
+void handleInputPins(unsigned char led_input)
+{
+	static unsigned char firstTime = 1;	
+	unsigned char SensorIn;
+	unsigned char val = (PORTC & INPUT_LED_STATUS_PIN_MASK);
+  76:	95 b3       	in	r25, 0x15	; 21
+  78:	93 7e       	andi	r25, 0xE3	; 227
+	led_input &= INPUT_PIN_MASK; // PD5,PD6,PD7  yyy0 0000
+  7a:	80 7e       	andi	r24, 0xE0	; 224
+	led_input >>=0x03; // shift till PC2
+  7c:	86 95       	lsr	r24
+  7e:	86 95       	lsr	r24
+  80:	86 95       	lsr	r24
+	if( (led_input != last_input)||(firstTime ==1) )
+  82:	20 91 62 00 	lds	r18, 0x0062
+  86:	82 13       	cpse	r24, r18
+  88:	04 c0       	rjmp	.+8      	; 0x92 <handleInputPins+0x1c>
+  8a:	20 91 60 00 	lds	r18, 0x0060
+  8e:	21 30       	cpi	r18, 0x01	; 1
+  90:	d9 f4       	brne	.+54     	; 0xc8 <handleInputPins+0x52>
+	{
+		firstTime = 0;	
+  92:	10 92 60 00 	sts	0x0060, r1
+		last_input = led_input;	
+  96:	80 93 62 00 	sts	0x0062, r24
+		PORTC = (val |led_input);
+  9a:	98 2b       	or	r25, r24
+  9c:	95 bb       	out	0x15, r25	; 21
+		SensorIn= led_input>> 0x02; // move to PC0
+  9e:	86 95       	lsr	r24
+  a0:	86 95       	lsr	r24
+		SensorIn &= 0x03; //only 2 input PD5&PD6 
+  a2:	83 70       	andi	r24, 0x03	; 3
+		
+		if(SensorIn == 0x00) // no water--- input high->close ckt-- current flow--VCE--0v-- PDxyz->low (HighLevel=0 LowLevel=0 )
+  a4:	51 f4       	brne	.+20     	; 0xba <handleInputPins+0x44>
+		{
+			CNTRL_MOTOR1_ON();
+  a6:	a9 9a       	sbi	0x15, 1	; 21
+			app_delay_ms(500);
+  a8:	84 ef       	ldi	r24, 0xF4	; 244
+  aa:	91 e0       	ldi	r25, 0x01	; 1
+  ac:	d8 df       	rcall	.-80     	; 0x5e <app_delay_ms>
+			CNTRL_MOTOR0_ON();
+  ae:	a8 9a       	sbi	0x15, 0	; 21
+			app_delay_ms(2000);
+  b0:	80 ed       	ldi	r24, 0xD0	; 208
+  b2:	97 e0       	ldi	r25, 0x07	; 7
+  b4:	d4 df       	rcall	.-88     	; 0x5e <app_delay_ms>
+			CNTRL_MOTOR0_OFF();			
+  b6:	a8 98       	cbi	0x15, 0	; 21
+  b8:	08 95       	ret
+			//TimerTriggerd=1;
+		}
+		
+		else if(SensorIn == 0x03) // full water--- input low->open ckt-- current blocked --VCE--5v-- PDxyz->high (HighLevel=1 LowLevel=1 )
+  ba:	83 30       	cpi	r24, 0x03	; 3
+  bc:	29 f4       	brne	.+10     	; 0xc8 <handleInputPins+0x52>
+		{
+			CNTRL_MOTOR1_OFF();
+  be:	a9 98       	cbi	0x15, 1	; 21
+			app_delay_ms(500);
+  c0:	84 ef       	ldi	r24, 0xF4	; 244
+  c2:	91 e0       	ldi	r25, 0x01	; 1
+  c4:	cc df       	rcall	.-104    	; 0x5e <app_delay_ms>
+			CNTRL_MOTOR0_OFF();
+  c6:	a8 98       	cbi	0x15, 0	; 21
+  c8:	08 95       	ret
+
+000000ca <main>:
+*/
+
+int main(void)
+{
+	/* OUTPUT PINS*/
+	DDRC |= ( (1<< MODULE_STATUS_PIN)|(1<< CNTRL_MOTOR0)|(1<<CNTRL_MOTOR1) |(1<<INPUT_LED_STATUS_PIN0)|(1<<INPUT_LED_STATUS_PIN1) |(1<< INPUT_LED_STATUS_PIN2)  );
+  ca:	84 b3       	in	r24, 0x14	; 20
+  cc:	8f 63       	ori	r24, 0x3F	; 63
+  ce:	84 bb       	out	0x14, r24	; 20
+	
+	/* INPUT PINS*/
+	DDRD &= ~( (1<<INPUT_PIN_LOW_LEVEL) | (1<<INPUT_PIN_MIDDLE_LEVEL) | (1<<INPUT_PIN_HIGH_LEVEL) );
+  d0:	81 b3       	in	r24, 0x11	; 17
+  d2:	8f 71       	andi	r24, 0x1F	; 31
+  d4:	81 bb       	out	0x11, r24	; 17
+	
+	/* Set the pull-up register for input port*/
+	PORTD=INPUT_LINE;
+  d6:	80 ef       	ldi	r24, 0xF0	; 240
+  d8:	82 bb       	out	0x12, r24	; 18
+		
+	/* Configure default motor as off */
+	CNTRL_MOTOR0_OFF();
+  da:	a8 98       	cbi	0x15, 0	; 21
+	CNTRL_MOTOR1_OFF();
+  dc:	a9 98       	cbi	0x15, 1	; 21
+	LED_STATUS_OFF();
+  de:	85 b3       	in	r24, 0x15	; 21
+  e0:	8c 61       	ori	r24, 0x1C	; 28
+  e2:	85 bb       	out	0x15, r24	; 21
+		
+	while(1)
+	{
+		handleInputPins(PIND);
+		app_delay_ms(1000);
+		PORTC ^= (1<< MODULE_STATUS_PIN); // led on	
+  e4:	c0 e2       	ldi	r28, 0x20	; 32
+	LED_STATUS_OFF();
+	//setTimoutforShutOffMotor(15); // in Minutes
+		
+	while(1)
+	{
+		handleInputPins(PIND);
+  e6:	80 b3       	in	r24, 0x10	; 16
+  e8:	c6 df       	rcall	.-116    	; 0x76 <handleInputPins>
+		app_delay_ms(1000);
+  ea:	88 ee       	ldi	r24, 0xE8	; 232
+  ec:	93 e0       	ldi	r25, 0x03	; 3
+  ee:	b7 df       	rcall	.-146    	; 0x5e <app_delay_ms>
+		PORTC ^= (1<< MODULE_STATUS_PIN); // led on	
+  f0:	85 b3       	in	r24, 0x15	; 21
+  f2:	8c 27       	eor	r24, r28
+  f4:	85 bb       	out	0x15, r24	; 21
+  f6:	f7 cf       	rjmp	.-18     	; 0xe6 <main+0x1c>
+
+000000f8 <_exit>:
+  f8:	f8 94       	cli
+
+000000fa <__stop_program>:
+  fa:	ff cf       	rjmp	.-2      	; 0xfa <__stop_program>
