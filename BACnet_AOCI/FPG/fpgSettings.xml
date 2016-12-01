@@ -1,0 +1,10 @@
+<FpgSettings>
+  <BinaryProfile outputFileName="profile.zlb" />
+  <PostProcess outputFileName="profile.c">
+    <Header filePath="PostProcessHeader.txt" />
+    <Footer filePath="PostProcessFooter.txt" />
+  </PostProcess>
+  <CoplaProfileModules>
+	  <CoplaProfileModule name="BACnetM168" filePath="BACnetM168Profile.dll"/>
+  </CoplaProfileModules>
+</FpgSettings>

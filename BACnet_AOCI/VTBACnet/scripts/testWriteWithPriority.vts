@@ -1,0 +1,34 @@
+SETUP WriteProperty Test
+
+TD_PORT = 'ip'
+IUT_IP = 192.168.1.100:0xBAC0
+IUT_DNET = 1
+IUT_DADR = 0x02
+MAX_APDU_SIZE = 480
+
+SECTION One
+TEST One
+DEPENDENCIES None
+REFERENCE None
+
+  SEND (
+      NETWORK = TD_PORT
+      Da = IUT_IP
+      DNET = IUT_DNET
+      DADR = IUT_DADR
+      HOPCOUNT = 255
+      DER = TRUE
+      bvlci = ORIGINAL-UNICAST-NPDU   
+      PDU = Confirmed-Request
+      Service = WriteProperty
+      SegMsg = 0
+      SegResp = 0
+      MaxResp = MAX_APDU_SIZE
+      InvokeID = 1
+      Object = 0, analog-value, 0
+      Property = 1, present-value
+      OpenTag 3
+          REAL = 3.45
+      CloseTag 3
+      UNSIGNED = 4, 1
+  )

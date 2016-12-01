@@ -1,0 +1,41 @@
+SETUP Positive ReadProperty Tests
+
+ TD_IP = 192.168.2.1
+ IUT_IP	= 192.168.2.200
+  OBJECT1 = BINARY-VALUE, 3		; Object which is the subject of the Read Prop tests
+
+  VAL1 = 0
+  SF = F,F,F,T                           ; THIS IS THE VALUE FOR THE STATUS FLAGS (POSITION 1 AND 3 MUST MATCH THE EPICS)
+  SF1 = F,T,F,T                          ; VERIFY Status_Flags = (?, TRUE, ?, TRUE) (POSITION 1 AND 3 MUST MATCH THE EPICS)
+
+
+SECTION ReadProperty Service Execution Tests
+
+TEST #1 - 1    ; 7.3.1.1	Out_Of_Service, Status_Flags, and Reliability Tests
+
+SEND (
+      NETWORK = "Untitled"
+      DA = IUT_IP
+      bvlci =ORIGINAL-UNICAST-NPDU
+      SegMsg = 0
+      SegResp = 0
+      MaxResp = 1476
+      InVokeID = 3
+      DER = TRUE
+      PDU = Confirmed-Request
+      Service = WriteProperty
+      Object = 0, OBJECT1 
+      Property = 1, OUT-OF-SERVICE
+      OPENTAG 3
+      BOOLEAN = 1                ; SET OUT OF SERVICE TO TRUE
+      CLOSETAG 3
+     )
+
+    EXPECT (
+      NETWORK = "Untitled"
+      bvlci =ORIGINAL-UNICAST-NPDU
+      SA = IUT_IP
+      DER = FALSE
+      PDU = SimpleAck
+      Service = WriteProperty
+    )

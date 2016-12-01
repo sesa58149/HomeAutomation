@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.schneider-electric.com SchneiderISO_V45.xsd" xmlns="http://www.schneider-electric.com">
+  <ProfileHeader>
+    <ProfileIdentification>myCopla4BACnet_ID</ProfileIdentification>
+    <ProfileRevision>02.00</ProfileRevision>
+    <ProfileName>myCopla4BACnet</ProfileName>
+    <ProfileSource>SoHVAC</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>1</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>BACnet</ProfileTechnology>
+    </ISO15745Reference>
+    <IASInterfaceType>CSI</IASInterfaceType>
+  </ProfileHeader>
+  <ProfilesBody formatName="DDXML" formatVersion="4.5" fileName="SoHVAC_V2.5_DatasharingClient_V2.0.007_BACnet-Profile.xml" fileCreator="SoHVAC" fileCreationDate="2014-03-18" fileVersion="01.00">
+    <ProfileBody formatName="DDXML" formatVersion="4.5" fileName="CoplaBACnetV1.XML" fileCreator="SoHVAC" fileCreationDate="2014-03-18" fileVersion="01.00" supportedLanguages="en-us" deviceClass="compact">
+      <DeviceIdentity>
+        <vendorName>Schneider Electric</vendorName>
+        <productFamily>Communication</productFamily>
+        <productName>TM168D23C</productName>
+        <productID>TM168D23C</productID>
+        <version versionType="FW">01.00</version>
+        <version versionType="SW">1.0</version>
+      </DeviceIdentity>
+      <DeviceManager>
+        <communicationEntity>
+          <BACnet>
+            <BACnetHostObject>
+              <DeviceObject ObjectIdentifier="SoHVAC_V25_DatasharingDestina" ObjectName="SoHVAC_V2.5_DatasharingDestina" ObjectType="DEVICE" Description="M168" VendorName="Schneider Electric" VendorIdentifier="10" modelName="M168" applicationRevision="1.0" location="M168" HostFirmwareVersion="1" ProfileName="10-M168-TM168D23C">
+                <supportedBACnetServiceList>
+                  <BACnetService name="ReadProperty" />
+                  <BACnetService name="WriteProperty" />
+                  <BACnetService name="ReadPropertyMultiple" />
+                  <BACnetService name="WritePropertyMultiple" />
+                </supportedBACnetServiceList>
+                <ProtocolObjectTypes>
+                  <ProtocolObjectType name="DEVICE" />
+                </ProtocolObjectTypes>
+                <ObjectsList nbrAllObjects="13">
+                  <object name="DeviceObject" nbrObjects="1" />
+                  <object name="AnalogValue" nbrObjects="3" />
+                  <object name="BinaryValue" nbrObjects="4" />
+                  <object name="Multistate" nbrObjects="3" />
+                  <object name="Calendar" nbrObjects="1" />
+                  <object name="Schedule" nbrObjects="1" />
+                </ObjectsList>
+                <HostObjectList>
+                  <hostRTCaddress parameterIDRef="E_8_Low" />
+                  <hostRTCaddress parameterIDRef="E_8_High" />
+                </HostObjectList>
+                <APDUTimeout readwrite="true" defaultValue="3000" />
+              </DeviceObject>
+              <analogObjectList>
+                <analogObject ObjectIdentifier="AV_0_ID" ObjectName="BACnet_Read_VA" ObjectType="ANALOG_VALUE" parameterIDRef="E_3" />
+                <analogObject ObjectName="BACnet_Read_VA1" ObjectType="ANALOG_VALUE" parameterIDRef="E_9" />
+                <analogObject ObjectName="BACnet_Read_VA2" ObjectType="ANALOG_VALUE" parameterIDRef="E_10" />
+              </analogObjectList>
+              <binaryObjectList>
+                <binaryObject ObjectName="BACnet_Scheduler" ObjectType="BINARY_VALUE" parameterIDRef="E_7" />
+                <binaryObject ObjectName="BACnet_Read_BV" ObjectType="BINARY_VALUE" parameterIDRef="E_1" />
+                <binaryObject ObjectName="BACnet_Read_BV1" ObjectType="BINARY_VALUE" parameterIDRef="E_11" />
+                <binaryObject ObjectName="BACnet_Read_BV2" ObjectType="BINARY_VALUE" parameterIDRef="E_12" />
+              </binaryObjectList>
+              <multistateObjectList>
+                <multistateObject ObjectName="BACnet_Read_MSV" ObjectType="MULTISTATE_VALUE" parameterIDRef="E_2" />
+                <multistateObject ObjectName="BACnet_Read_MSV1" ObjectType="MULTISTATE_VALUE" parameterIDRef="E_13" />
+                <multistateObject ObjectName="BACnet_Read_MSV2" ObjectType="MULTISTATE_VALUE" parameterIDRef="E_14" />
+              </multistateObjectList>
+              <CalendarObjectList>
+                <CalendarObject ObjectIdentifier="CAL_0_ID" ObjectName="Calendar0" ObjectType="CALENDAR" description="Calendar Object Description" presentValue="false">
+                  <DateList>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                    <CalendarEntry>
+                      <Date>0001-01-01</Date>
+                    </CalendarEntry>
+                  </DateList>
+                </CalendarObject>
+              </CalendarObjectList>
+              <ScheduleObjectList>
+                <ScheduleObject ObjectIdentifier="SCH_0_ID" ObjectName="Schedule0" ObjectType="SCHEDULE" presentValue="" description="Schedule Object Description" scheduleDefault="0" priorityForWriting="0">
+                  <StatusFlags>
+                    <IN_ALARM>false</IN_ALARM>
+                    <FAULT>false</FAULT>
+                    <OVERIDDEN>false</OVERIDDEN>
+                    <OUT_OF_SERVICE>false</OUT_OF_SERVICE>
+                  </StatusFlags>
+                  <Reliability>
+                    <value>no-fault-detected</value>
+                  </Reliability>
+                  <EffectivePeriodList>
+                    <EffectivePeriod>
+                      <StartDate>2014-03-09</StartDate>
+                      <EndDate>2040-08-13</EndDate>
+                    </EffectivePeriod>
+                    <EffectivePeriod>
+                      <StartDate>0001-01-01</StartDate>
+                      <EndDate>0001-01-01</EndDate>
+                    </EffectivePeriod>
+                    <EffectivePeriod>
+                      <StartDate>0001-01-01</StartDate>
+                      <EndDate>0001-01-01</EndDate>
+                    </EffectivePeriod>
+                    <EffectivePeriod>
+                      <StartDate>0001-01-01</StartDate>
+                      <EndDate>0001-01-01</EndDate>
+                    </EffectivePeriod>
+                  </EffectivePeriodList>
+                  <WeeklySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>12:53:00.0000000+05:30</Time>
+                          <Value>111</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>12:54:00.0000000+05:30</Time>
+                          <Value>222</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>12:55:00.0000000+05:30</Time>
+                          <Value>333</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>12:56:00.0000000+05:30</Time>
+                          <Value>444</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                    <DaySchedule>
+                      <ListOfTimeValues>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                        <TimeValue>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValue>
+                      </ListOfTimeValues>
+                    </DaySchedule>
+                  </WeeklySchedule>
+                  <ExceptionSchedule>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarReference>CAL_0_ID</CalendarReference>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>12:53:00.0000000+05:30</Time>
+                          <Value>1</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:54:00.0000000+05:30</Time>
+                          <Value>2</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:54:00.0000000+05:30</Time>
+                          <Value>3</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:55:00.0000000+05:30</Time>
+                          <Value>4</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:56:00.0000000+05:30</Time>
+                          <Value>5</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:57:00.0000000+05:30</Time>
+                          <Value>6</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:58:00.0000000+05:30</Time>
+                          <Value>7</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>12:59:00.0000000+05:30</Time>
+                          <Value>8</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>01:00:00.0000000+05:30</Time>
+                          <Value>9</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>01:01:00.0000000+05:30</Time>
+                          <Value>10</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>01:02:00.0000000+05:30</Time>
+                          <Value>11</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>01:03:00.0000000+05:30</Time>
+                          <Value>12</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                    <SpecialEvent>
+                      <Period>
+                        <CalendarEntry>
+                          <Date>0001-01-01</Date>
+                        </CalendarEntry>
+                      </Period>
+                      <ListOfTimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                        <TimeValues>
+                          <Time>00:00:00.0000000+05:30</Time>
+                          <Value>Invalid</Value>
+                        </TimeValues>
+                      </ListOfTimeValues>
+                      <EventPriority>0</EventPriority>
+                    </SpecialEvent>
+                  </ExceptionSchedule>
+                  <ListOfObjectPropertyReferences>
+                    <DeviceObjectPropertyReference>
+                      <ObjectIdentifier>AV_0_ID</ObjectIdentifier>
+                      <PropertyIdentifier>85</PropertyIdentifier>
+                      <PropertyArrayIndex>0</PropertyArrayIndex>
+                      <DeviceIdentifier>SoHVAC_V25_DatasharingDestina</DeviceIdentifier>
+                    </DeviceObjectPropertyReference>
+                  </ListOfObjectPropertyReferences>
+                </ScheduleObject>
+              </ScheduleObjectList>
+            </BACnetHostObject>
+            <compatibility minFieldBusVersion="1" minFieldBusConformanceClass="B-ASC" FieldBusType="BACnet IP" />
+            <configuredBACnet>
+              <IP ipAddress="192.168.2.44" subNetMask="255.255.255.0" gateway="192.168.2.1" MACaddress="00:C0:B7:C3:D9:26" DeviceInstance="44" maxAPDUlengths="1476" port="Port BAC0" />
+            </configuredBACnet>
+          </BACnet>
+        </communicationEntity>
+        <communicationEntity>
+          <modbusSerial>
+            <modbusSerialFeatures>
+              <communicationMode defaultValue="RTU" />
+              <baudRateValues>
+                <supportedBaudRate value="19200" />
+              </baudRateValues>
+              <slaveNumberRange>
+                <addressRange lowerAddress="1" upperAddress="15" />
+              </slaveNumberRange>
+              <parity defaultValue="even" />
+              <stopBits defaultValue="1" />
+              <physicalInterface interface="RS232" />
+            </modbusSerialFeatures>
+            <dataMappingList>
+              <dataMapping parameterIDRef="E_3" accessPath="3" services="read write" />
+              <dataMapping parameterIDRef="E_9" accessPath="4" services="read write" />
+              <dataMapping parameterIDRef="E_10" accessPath="5" services="read write" />
+              <dataMapping parameterIDRef="E_7" accessPath="6" services="read write" />
+              <dataMapping parameterIDRef="E_1" accessPath="7" services="read write" />
+              <dataMapping parameterIDRef="E_11" accessPath="8" services="read write" />
+              <dataMapping parameterIDRef="E_12" accessPath="9" services="read write" />
+              <dataMapping parameterIDRef="E_2" accessPath="10" services="read write" />
+              <dataMapping parameterIDRef="E_13" accessPath="11" services="read write" />
+              <dataMapping parameterIDRef="E_14" accessPath="12" services="read write" />
+              <dataMapping parameterIDRef="E_8_Low" accessPath="1" services="read" />
+              <dataMapping parameterIDRef="E_8_High" accessPath="2" services="read" />
+            </dataMappingList>
+          </modbusSerial>
+          <CommunicationHW name="">
+            <compatibility>
+              <minInterfaceVersion>2</minInterfaceVersion>
+            </compatibility>
+            <hostTypeList>
+              <hostType>TM168D23C</hostType>
+            </hostTypeList>
+          </CommunicationHW>
+        </communicationEntity>
+      </DeviceManager>
+      <DeviceFunction>
+        <capabilities>
+          <characteristicsList>
+            <category>
+              <label lang="en-us">Main capabilities</label>
+            </category>
+            <characteristic>
+              <characteristicName>
+                <label lang="en-us">Controller</label>
+              </characteristicName>
+              <characteristicContent>
+                <label lang="en-us">for characteristixs</label>
+              </characteristicContent>
+            </characteristic>
+          </characteristicsList>
+        </capabilities>
+      </DeviceFunction>
+    </ProfileBody>
+    <ProfileBody formatName="DDXML" formatVersion="4.5" fileName="CoplaBACnetV1.XML" fileCreator="SoHVAC" fileCreationDate="2014-03-18" fileVersion="01.00" supportedLanguages="en-us" deviceClass="compact">
+      <DeviceManager>
+        <communicationEntity>
+          <modbusSerial>
+            <modbusSerialFeatures>
+              <communicationMode defaultValue="RTU" />
+              <baudRateValues>
+                <supportedBaudRate value="19200" />
+              </baudRateValues>
+              <slaveNumberRange>
+                <addressRange lowerAddress="1" upperAddress="15" />
+              </slaveNumberRange>
+              <parity defaultValue="even" />
+              <stopBits defaultValue="1" />
+              <physicalInterface interface="RS232" />
+            </modbusSerialFeatures>
+            <dataMappingList>
+              <dataMapping parameterIDRef="E_3" accessPath="3" services="read write" />
+              <dataMapping parameterIDRef="E_9" accessPath="4" services="read write" />
+              <dataMapping parameterIDRef="E_10" accessPath="5" services="read write" />
+              <dataMapping parameterIDRef="E_7" accessPath="6" services="read write" />
+              <dataMapping parameterIDRef="E_1" accessPath="7" services="read write" />
+              <dataMapping parameterIDRef="E_11" accessPath="8" services="read write" />
+              <dataMapping parameterIDRef="E_12" accessPath="9" services="read write" />
+              <dataMapping parameterIDRef="E_2" accessPath="10" services="read write" />
+              <dataMapping parameterIDRef="E_13" accessPath="11" services="read write" />
+              <dataMapping parameterIDRef="E_14" accessPath="12" services="read write" />
+              <dataMapping parameterIDRef="E_8_Low" accessPath="1" services="read" />
+              <dataMapping parameterIDRef="E_8_High" accessPath="2" services="read" />
+            </dataMappingList>
+          </modbusSerial>
+          <CommunicationHW name="">
+            <compatibility>
+              <minInterfaceVersion>2</minInterfaceVersion>
+            </compatibility>
+            <hostTypeList>
+              <hostType>TM168D23C</hostType>
+            </hostTypeList>
+          </CommunicationHW>
+        </communicationEntity>
+      </DeviceManager>
+      <DeviceFunction>
+        <capabilities>
+          <characteristicsList>
+            <category>
+              <label lang="en-us">Main capabilities</label>
+            </category>
+            <characteristic>
+              <characteristicName>
+                <label lang="en-us">Controller</label>
+              </characteristicName>
+              <characteristicContent>
+                <label lang="en-us">for characteristixs</label>
+              </characteristicContent>
+            </characteristic>
+          </characteristicsList>
+        </capabilities>
+      </DeviceFunction>
+      <ApplicationProcess>
+        <dataTypeList>
+          <enum name="LED" uniqueID="CJ_LED_ID">
+            <enumValue value="0">
+              <label lang="en">OFF</label>
+            </enumValue>
+            <enumValue value="1">
+              <label lang="en">ON</label>
+            </enumValue>
+            <enumValue value="2">
+              <label lang="en">BLINK SLOW</label>
+            </enumValue>
+            <enumValue value="3">
+              <label lang="en">BLINK FAST</label>
+            </enumValue>
+            <UINT />
+          </enum>
+          <enum name="BUZZER" uniqueID="CJ_BUZZ_ID">
+            <enumValue value="0">
+              <label lang="en">OFF</label>
+            </enumValue>
+            <enumValue value="1">
+              <label lang="en">ON</label>
+            </enumValue>
+            <enumValue value="2">
+              <label lang="en">FREQ SLOW</label>
+            </enumValue>
+            <enumValue value="3">
+              <label lang="en">FREQ FAST</label>
+            </enumValue>
+            <UINT />
+          </enum>
+          <enum name="BIT" uniqueID="CJ_BIT_ID">
+            <enumValue value="false">
+              <label lang="en">0</label>
+            </enumValue>
+            <enumValue value="true">
+              <label lang="en">1</label>
+            </enumValue>
+            <BOOL />
+          </enum>
+          <enum name="CJ_SHORT_BYTE_2" uniqueID="CJ_SHORT_BYTE_2">
+            <enumValue value="0">
+              <label lang="en">0</label>
+            </enumValue>
+            <enumValue value="1">
+              <label lang="en">1</label>
+            </enumValue>
+            <enumValue value="2">
+              <label lang="en">2</label>
+            </enumValue>
+            <enumValue value="3">
+              <label lang="en">3</label>
+            </enumValue>
+            <enumValue value="4">
+              <label lang="en">4</label>
+            </enumValue>
+            <enumValue value="5">
+              <label lang="en">5</label>
+            </enumValue>
+            <enumValue value="6">
+              <label lang="en">6</label>
+            </enumValue>
+            <enumValue value="7">
+              <label lang="en">7</label>
+            </enumValue>
+            <enumValue value="8">
+              <label lang="en">8</label>
+            </enumValue>
+            <enumValue value="9">
+              <label lang="en">9</label>
+            </enumValue>
+            <enumValue value="10">
+              <label lang="en">10</label>
+            </enumValue>
+            <enumValue value="11">
+              <label lang="en">11</label>
+            </enumValue>
+            <enumValue value="12">
+              <label lang="en">12</label>
+            </enumValue>
+            <enumValue value="13">
+              <label lang="en">13</label>
+            </enumValue>
+            <enumValue value="14">
+              <label lang="en">14</label>
+            </enumValue>
+            <enumValue value="15">
+              <label lang="en">15</label>
+            </enumValue>
+            <BYTE />
+          </enum>
+          <enum name="CJ_SHORT_BYTE_13" uniqueID="CJ_SHORT_BYTE_13">
+            <enumValue value="0">
+              <label lang="en">0</label>
+            </enumValue>
+            <enumValue value="1">
+              <label lang="en">1</label>
+            </enumValue>
+            <enumValue value="2">
+              <label lang="en">2</label>
+            </enumValue>
+            <enumValue value="3">
+              <label lang="en">3</label>
+            </enumValue>
+            <enumValue value="4">
+              <label lang="en">4</label>
+            </enumValue>
+            <enumValue value="5">
+              <label lang="en">5</label>
+            </enumValue>
+            <enumValue value="6">
+              <label lang="en">6</label>
+            </enumValue>
+            <enumValue value="7">
+              <label lang="en">7</label>
+            </enumValue>
+            <enumValue value="8">
+              <label lang="en">8</label>
+            </enumValue>
+            <enumValue value="9">
+              <label lang="en">9</label>
+            </enumValue>
+            <enumValue value="10">
+              <label lang="en">10</label>
+            </enumValue>
+            <enumValue value="11">
+              <label lang="en">11</label>
+            </enumValue>
+            <enumValue value="12">
+              <label lang="en">12</label>
+            </enumValue>
+            <enumValue value="13">
+              <label lang="en">13</label>
+            </enumValue>
+            <enumValue value="14">
+              <label lang="en">14</label>
+            </enumValue>
+            <enumValue value="15">
+              <label lang="en">15</label>
+            </enumValue>
+            <BYTE />
+          </enum>
+          <enum name="CJ_SHORT_BYTE_14" uniqueID="CJ_SHORT_BYTE_14">
+            <enumValue value="0">
+              <label lang="en">0</label>
+            </enumValue>
+            <enumValue value="1">
+              <label lang="en">1</label>
+            </enumValue>
+            <enumValue value="2">
+              <label lang="en">2</label>
+            </enumValue>
+            <enumValue value="3">
+              <label lang="en">3</label>
+            </enumValue>
+            <enumValue value="4">
+              <label lang="en">4</label>
+            </enumValue>
+            <enumValue value="5">
+              <label lang="en">5</label>
+            </enumValue>
+            <enumValue value="6">
+              <label lang="en">6</label>
+            </enumValue>
+            <enumValue value="7">
+              <label lang="en">7</label>
+            </enumValue>
+            <enumValue value="8">
+              <label lang="en">8</label>
+            </enumValue>
+            <enumValue value="9">
+              <label lang="en">9</label>
+            </enumValue>
+            <enumValue value="10">
+              <label lang="en">10</label>
+            </enumValue>
+            <enumValue value="11">
+              <label lang="en">11</label>
+            </enumValue>
+            <enumValue value="12">
+              <label lang="en">12</label>
+            </enumValue>
+            <enumValue value="13">
+              <label lang="en">13</label>
+            </enumValue>
+            <enumValue value="14">
+              <label lang="en">14</label>
+            </enumValue>
+            <enumValue value="15">
+              <label lang="en">15</label>
+            </enumValue>
+            <BYTE />
+          </enum>
+        </dataTypeList>
+        <functionTypeList>
+          <functionType name="FT_myHost4Building_ID" uniqueID="FT_myHost4Building_ID_ID">
+            <versionInfo organization="Schneider Electric" version="01.00" author="SoHVAC" date="2014-03-18" />
+            <interfaceList>
+              <inputVars>
+                <varDeclaration name="Var_3" uniqueID="Var_3_ID">
+                  <WORD />
+                </varDeclaration>
+                <varDeclaration name="Var_9" uniqueID="Var_9_ID">
+                  <WORD />
+                </varDeclaration>
+                <varDeclaration name="Var_10" uniqueID="Var_10_ID">
+                  <WORD />
+                </varDeclaration>
+                <varDeclaration name="Var_7" uniqueID="Var_7_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_BIT_ID" />
+                </varDeclaration>
+                <varDeclaration name="Var_1" uniqueID="Var_1_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_BIT_ID" />
+                </varDeclaration>
+                <varDeclaration name="Var_11" uniqueID="Var_11_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_BIT_ID" />
+                </varDeclaration>
+                <varDeclaration name="Var_12" uniqueID="Var_12_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_BIT_ID" />
+                </varDeclaration>
+                <varDeclaration name="Var_2" uniqueID="Var_2_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_SHORT_BYTE_2" />
+                </varDeclaration>
+                <varDeclaration name="Var_13" uniqueID="Var_13_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_SHORT_BYTE_13" />
+                </varDeclaration>
+                <varDeclaration name="Var_14" uniqueID="Var_14_ID">
+                  <dataTypeIDRef uniqueIDRef="CJ_SHORT_BYTE_14" />
+                </varDeclaration>
+                <varDeclaration name="Var_8" uniqueID="Var_8_Low_ID">
+                  <UINT />
+                </varDeclaration>
+                <varDeclaration name="Var_8" uniqueID="Var_8_High_ID">
+                  <UINT />
+                </varDeclaration>
+              </inputVars>
+            </interfaceList>
+          </functionType>
+        </functionTypeList>
+        <functionInstanceList>
+          <functionInstance name="F_myHost4Building_ID" uniqueID="F_myHost4Building_ID_ID" typeIDRef="FT_myHost4Building_ID_ID" />
+        </functionInstanceList>
+        <parameterList>
+          <parameter uniqueID="E_3" access="readWrite" multiplier="0x1">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_3_ID" />
+            </variableRef>
+            <property name="TagName" value="AV0" />
+          </parameter>
+          <parameter uniqueID="E_9" access="readWrite" multiplier="0x1">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_9_ID" />
+            </variableRef>
+            <property name="TagName" value="AV1" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="4" />
+            <property name="ExternalDeviceId" value="33591813" />
+            <property name="ExternalObjectId" value="8388609" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_10" access="readWrite" multiplier="0x1">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_10_ID" />
+            </variableRef>
+            <property name="TagName" value="AV2" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="5" />
+            <property name="ExternalDeviceId" value="33591813" />
+            <property name="ExternalObjectId" value="8388609" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_8_Low">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_8_Low_ID" />
+            </variableRef>
+          </parameter>
+          <parameter uniqueID="E_8_High">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_8_High_ID" />
+            </variableRef>
+          </parameter>
+          <parameter uniqueID="E_7" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_7_ID" />
+            </variableRef>
+            <property name="TagName" value="BV0" />
+            <property name="ActiveText" value="1" />
+            <property name="InactiveText" value="0" />
+          </parameter>
+          <parameter uniqueID="E_1" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_1_ID" />
+            </variableRef>
+            <property name="TagName" value="BV1" />
+            <property name="ActiveText" value="1" />
+            <property name="InactiveText" value="0" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="7" />
+            <property name="ExternalDeviceId" value="33591813" />
+            <property name="ExternalObjectId" value="20971521" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_11" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_11_ID" />
+            </variableRef>
+            <property name="TagName" value="BV2" />
+            <property name="ActiveText" value="1" />
+            <property name="InactiveText" value="0" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="8" />
+            <property name="ExternalDeviceId" value="33591813" />
+            <property name="ExternalObjectId" value="20971521" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_12" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_12_ID" />
+            </variableRef>
+            <property name="TagName" value="BV3" />
+            <property name="ActiveText" value="1" />
+            <property name="InactiveText" value="0" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="9" />
+            <property name="ExternalDeviceId" value="33554532" />
+            <property name="ExternalObjectId" value="20971522" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_2" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_2_ID" />
+            </variableRef>
+            <property name="TagName" value="MSV0" />
+            <property name="BeginsWithZero" value="true" />
+            <property name="StateText" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" />
+            <property name="AddressType" value="Remote" />
+            <property name="ExternalRegisterAddress" value="10" />
+            <property name="ExternalDeviceId" value="79729157" />
+            <property name="ExternalObjectId" value="79691776" />
+            <property name="ExternalPropertyId" value="85" />
+            <property name="ExternalArrayIndex" value="0" />
+            <property name="ExternalPollingTime" value="1000" />
+            <property name="ExternalAccess" value="Read" />
+          </parameter>
+          <parameter uniqueID="E_13" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_13_ID" />
+            </variableRef>
+            <property name="TagName" value="MSV1" />
+            <property name="BeginsWithZero" value="true" />
+            <property name="StateText" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" />
+          </parameter>
+          <parameter uniqueID="E_14" access="readWrite">
+            <label lang="en-us" />
+            <variableRef>
+              <instanceIDRef uniqueIDRef="F_myHost4Building_ID_ID" />
+              <variableIDRef uniqueIDRef="Var_14_ID" />
+            </variableRef>
+            <property name="TagName" value="MSV2" />
+            <property name="BeginsWithZero" value="true" />
+            <property name="StateText" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" />
+          </parameter>
+        </parameterList>
+      </ApplicationProcess>
+    </ProfileBody>
+  </ProfilesBody>
+</ISO15745Profile>

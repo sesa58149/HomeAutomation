@@ -1,0 +1,438 @@
+#ifndef BACNETAPPDEFINES_H__
+#define BACNETAPPDEFINES_H__
+
+/**
+ *	@file BACnetAppDefines.h
+ *	<TABLE>
+ *	@brief Header file for BACnet Application Definitions
+ *
+ *	@copy
+ *	<TABLE>
+ *	<TR><TD> Copyright </TD></TR>
+ *	<TR>
+ *	<TD>Schneider Electric India (Pvt) Ltd.                                         
+ *	Copyright (c) 2009 - All rights reserved.                                   
+ *	</TR>
+ *	<TR>                                                                             
+ *	<TD> No part of this document may be reproduced in any form without the express  
+ * 	written consent of Schneider Electric India (Pvt) Ltd.</TD>
+ *	</TR>
+ *	</TABLE>
+ *
+ *	@par
+ *	@author Shrikant and Pawan	 
+ *	@par HISTORY
+ *
+ *	<TABLE>
+ *	<TR>
+ *	<TD>Author</TD>				<TD>Date</TD>			<TD>Description</TD>
+ *	</TR>
+ *	<TR>
+ *	<TD>Shrikant and Pawan	</TD>		<TD>02-Oct-2009</TD>	<TD>First creation</TD>
+ *  </TR>
+ *	</TABLE>
+ *	</TABLE>
+ *
+ */
+
+#include "trTypes.h"
+#include "string.h"
+
+#define MAX_STR_LEN	32
+
+#define MAX_MSV_STATES 16
+
+#define BN_MALLOC	malloc
+
+#if MAX_STR_LEN % 2 != 0
+#warning "MAX_STR_LEN MUST BE DIVIDABLE WITH 2"
+#endif
+
+
+#define MAX_DEVICE_OBJECT	1
+#define MAX_ANALOG_VALUE_OBJECT 10
+#define MAX_BINARY_VALUE_OBJECT 10
+#define MAX_MULTI_STATE_VALUE_OBJECT 10
+#define MAX_CONF_FILE	1
+#define MAX_BACNET_OBJECT_SUPPORTED	258
+
+#define BACNET_OBJECT_TYPE_MASK	0XFFC00000L
+#define BACNET_OBJECT_INSTANCE_MASK 0x003FFFFFl
+#define BACNET_OBJECT_TYPE_SHIFT 22
+#define TR_INVAILID_BACNET_OBJECT	0xFFFFFFFFl
+#define TR_INVAILID_BACNET_OBJECT_TYPE	0xFFC0;
+#define HOST_NOT_AVAILABLE 0xFFFF
+#define ASCII_OVERHEAD 0x30
+
+#define MAX_ACTIVE_COV_LIST_ALLOWED	25
+#define MAX_SIZE_OF_EVENT_SUMMARY_BUFFER	15
+//any changes in above micro need to chnage the
+// MAX_ACTIVE_COV_LIST_STACK_SUPPORTS 25 in vsbhp.h as well
+// to avoid device crash due to memory curruption/overwrite
+
+#define MAX_REG 	2
+
+#define LITTLE_WORD_ENDIAN 1
+
+#define MAXUINT16 0xffff
+#define MAXUINT32 0xffffffff
+#define MAXSINT16 32767
+#define MAXSINT32 2147483647
+#define MINSINT16 -32768
+#define MINSINT32 -2147483648	
+
+#define BACNET_STACK_FRQUENCY	10
+
+#define MAX_BACNET_VALUE_OBJECT	240
+#define MAX_NOTIFICATION_CLASS_OBJECT	6
+
+#ifdef COSMOS
+#define MAX_FILE_OBJECT	4
+#define MAX_EVENT_SUMMERY 5
+#else
+#define MAX_FILE_OBJECT	2
+#define MAX_EVENT_SUMMERY 15
+#endif
+
+#define MAX_PASS_LENGTH	20
+
+#define BACNET_FO_PROFILE_INSTANCE	0
+#define BACNET_FO_APP_INSTANCE	1
+
+#define BACNET_PROTOCOL_VERSION 1
+#define BACNET_PROTOCOL_REVISION 4
+
+//#define BACNET_READ_ACCESS_DENIED 0x0200 + 27
+//#define BACNET_SERVICE_REQUEST_DENIED 0x0200 + 29
+//#define BACNET_TIMEOUT_ERROR	0x7D00 + 30
+#define BACNET_READ_ACCESS_DENIED  27
+#define BACNET_SERVICE_REQUEST_DENIED  29
+#define BACNET_VALUE_OUT_OF_RANGE		37
+#define BACNET_TIMEOUT_ERROR	 30
+
+#define BINARY_PRESENT_VALUE_INACTIVE	0
+#define BINARY_PRESENT_VALUE_ACTIVE	1
+
+#define  UNSIGNED_MAX_VALUE	0xFFFF
+
+//If present value 16 bit, the max is 0xFFFF by default. 
+// If 32 bit, it should be 0xFFFFFFFF
+#define MAX_AV_PRESENT_VALUE_SUPPORTED	0xFFFF
+#define MAX_AV_PRESENT_VALUE_SUPPORTED_32BIT	0xFFFFFFFF
+#define MAX_MSV_PRESENT_VALUE_SUPPORTED	0xFFFF
+
+#define NO_OBJECT	0xFFFFFFFFL
+#define NO_INDEX_32 0xFFFFFFFFL
+#define NO_INDEX_16 0xFFFF
+#define TR_BACNET_MAX_EVENT_ENABLE_BITS		3
+#define TR_BACNET_MAX_LIMIT_ENABLE_BITS		2
+#define TR_BACNET_EVENT_ENABLE_BITS_MASK		0xE0
+#define TR_BACNET_LIMIT_ENABLE_BITS_MASK		0xC0
+#define TR_BACNET_MAX_ACK_REQUIRED_BITS		3
+#define TR_BACNET_AC_REQUIRED_BIT_MASK			0xE0
+
+#define TR_BACNET_MAX_RECIPIENT_ALLOWED		5
+
+#define BACNET_DATE_TIME_FIELD_INVAILID		0xFFFF
+#define FORIGN_DEV_REG_TTL 300
+
+#define INVALID_VALUES   							0xFF
+#define INVALID_ARRAY_INDEX   					0x0200+42
+#define SERVICE_REQUEST_DENIED 					0x500+29
+#define BACNET_STATUS_FLAGS_BITS_IN_ALARM		0x80
+#define BACNET_STATUS_FLAGS_BITS_FAULT			0x40
+#define INVALID_TIME_STAMP  0x0500+14  //#define serviceserror	0x0500
+#define VALUE_OUT_OF_RANGE  0x0200+37
+#define BACNET_STATUS_FLAGS_BITS_OVERRIDEN	0x20
+#define BACNET_STATUS_FLAGS_BITS_OUT_OF_SERVICE	0x10
+#define BACNET_DEFAULT_COV_INCREMENT  0.1
+/*use following MACROS to return an error from BACnet Applications to the stack*/
+#define	BACNET_APP_DEVICEERROR						0X0000
+#define BACNET_APP_OBJECTERROR						0X0100
+#define BACNET_APP_PROPERTYERROR					0X0200
+#define BACNET_APP_RESOURCESERROR					0X0300
+#define BACNET_APP_SECURITYERROR					0X0400
+#define BACNET_APP_SERVICESERROR					0X0500
+#define BACNET_APP_VTERROR							0X0600
+#define BACNET_APP_CLIENTERROR						0X7D00
+#define BACNET_APP_REJECTREASON					0X7E00
+#define BACNET_APP_ABORTREASON						0X7000
+
+#define BACNET_APP_CONFIGURATIONINPROGRESS	(BACNET_APP_DEVICEERROR+2)		
+#define BACNET_APP_INCONSISTENTPARAMETERS		(BACNET_APP_SERVICESERROR+7)
+#define BACNET_APP_INVALIDDATATYPE			(BACNET_APP_PROPERTYERROR+9)
+#define BACNET_APP_RESOURCESOTHER				(BACNET_APP_RESOURCESERROR+0)
+#define BACNET_APP_INVALIDACCESSMETHOD		(BACNET_APP_SERVICESERROR+10)
+#define BACNET_APP_INVALIDFILESTART			(BACNET_APP_SERVICESERROR+11)
+#define BACNET_APP_SERVICEREQUESTDENIED		(BACNET_APP_SERVICESERROR+29)
+#define	BACNET_APP_READACCESSDENIED			(BACNET_APP_OBJECTERROR+27)
+#define BACNET_APP_UNKNOWNOBJECT				(BACNET_APP_OBJECTERROR+31)
+#define BACNET_APP_UNKNOWNPROPERTY			(BACNET_APP_PROPERTYERROR+32)
+#define BACNET_APP_UNSUPPORTEDOBJECTTYPE		(BACNET_APP_OBJECTERROR+36)	
+#define BACNET_APP_VALUEOUTOFRANGE			(BACNET_APP_PROPERTYERROR+37)
+#define BACNET_APP_WRITEACCESSDENIED			(BACNET_APP_PROPERTYERROR+40)
+#define BACNET_APP_INVALIDARRAYINDEX			(BACNET_APP_PROPERTYERROR+42)
+#define BACNET_APP_UNKNOWNDEVICE				(BACNET_APP_CLIENTERROR+31)
+#define BACNET_APP_TIMEOUT					(BACNET_APP_CLIENTERROR+30)
+#define BACNET_APP_OBJECTERROROTHER			(BACNET_APP_OBJECTERROR+0)
+#define BACNET_APP_RESOURCESOTHER				(BACNET_APP_RESOURCESERROR+0)	
+#define BACNET_APP_SEGMENTATIONNOTSUPPORTED	(BACNET_APP_ABORTREASON+4)		
+#define BACNET_APP_CHARACTERSETNOTSUPPORTED	(BACNET_APP_PROPERTYERROR+41)
+#define BACNET_APP_OBJECTNAMENOTUNIQUE		(BACNET_APP_OBJECTERROR+24)		
+#define BACNET_APP_INVALIDTAG					(BACNET_APP_REJECTREASON+4)
+#define BACNET_APP_PROPERTYISNOTANARRAY   (BACNET_APP_PROPERTYERROR+50)
+#define BACNET_APP_INVALID_EVENT_STATE    (BACNET_APP_SERVICESERROR + 73)
+#define BACNET_APP_NOERROR					0XFFFF
+
+#define BACNET_APP_LIST_IS_EMPTY 80
+
+typedef enum
+{
+	ERROR_VALUE = -1,	
+	TYPE_NONE = 0,
+	TR_DOUBLE_PRECESION_FLOAT,
+	TR_SINGLE_PRECESION_FLOAT,
+	TR_UINT_32,
+	TR_SINT_32,
+	TR_UINT_16,
+	TR_SINT_16,
+	TR_ENUMERATED,
+	TR_UINT_8,
+	TR_SINT_8
+}TR_DataType;
+
+typedef enum
+{
+TR_BACnetBooleanValue = 0,
+TR_BACnetBinaryValue,
+TR_BACnetEventTypeProp,
+TR_BACnetPolarity,
+TR_BACnetProgramChange,
+TR_BACnetProgramState,
+TR_BACnetReasonForFault,
+TR_BACnetReliability,
+TR_BACnetState,
+TR_BACnetSystemStatus,
+TR_BACnetUnits,
+TR_BACnetUnsignedValue,
+TR_BACnetLifeSaftyMode,
+TR_BACnetLifeSeftyState,
+}TR_BACnetPropertyStates;
+typedef struct 
+{
+	Int8 dataType;
+	union
+	{
+		double dVal;
+		float  fVal;
+		Uint32 ULVal;
+		Sint32 SLVal;
+		Uint16 USVal;
+		Sint16 SSVal;
+		Uint8	 UByte;
+		Int8	 SByte;
+
+	}pv;
+}TR_DataContainer;
+
+typedef struct 
+{
+	Uint16 startHostAddress;
+	Uint32 numObjects;
+	Uint32 *objects;
+}BACnetObject;   
+
+typedef enum
+{
+	ETH,
+	BIP,
+	MSTP,
+	MAX
+}BACnetProtocol;
+
+#define	DEVICE_OBJ_ID		108
+#define	DATABASE_REV		1
+#define	APDU_RETRIES		0
+#define	BACNET_APDU_TIMEOUT		3
+#define	STATION				1
+#define	BACNET_MAX_MASTER			127
+#define	BACNET_MAX_INFO_FRAMES	1
+#define 	BACNET_SOCKET_ADDR	0xBAC0
+
+#if 0   
+	#define  COPLA_VENDOR_ID				335
+	#define	COPLA_DEVICE_NAME				"BACnet Copla"
+	#define	COPLA_VENDOR_NAME				"Schneider Electric"
+	#ifdef COSMOS
+		#define	COPLA_MODEL_NAME				"Copla MSTP"
+	#else
+		#define	COPLA_MODEL_NAME				"TM168BACW"
+	#endif
+	#define	COPLA_FIRMWARE_VERSION		"V0.2 IE1"
+	#define	COPLA_APPLICATION_VERSION	"V0.2 IE1"
+	#define	COPLA_DEVICE_DESCRIPTION	"Copla Device"
+	#define	COPLA_DEVICE_PROFILE			"335-COPLA001"
+	#define  COPLA_DEVICE_LOCATION		"unknown"
+#endif
+
+typedef enum 
+{
+	READ_REG,
+	WRITE_REG	
+}ACTION_TYPE;
+
+typedef enum
+{
+	TR_NO_FAULT_DETECTED = 0,
+	TR_NO_SENSOR,		//1
+	TR_OVER_RANGE,    //2
+	TR_TR_UNDER_RANGE,   //3
+	TR_OPEN_LOOP,     //4
+	TR_SHORTED_LOOP,  //5
+   TR_NO_OUTPUT,     //6
+	TR_UNRELIABLE_OTHER, //7
+   TR_PROCESS_ERROR,     //8
+   TR_MULTI_STATE_FAULT,    //9
+   TR_CONFIGURATION_ERROR      //10
+}RELIABILITY_TYPE;
+
+#ifndef COSMOS
+typedef struct
+{
+	Uint32	ipAddr;
+	Uint32 	ipBcast;
+	Uint32	ipSubnet;   
+}ipParam;
+#endif
+
+
+#define TR_BACNET_OBJECT_IDENTIFIRE_SIZE 12 // 4- byte each for BACnet Object ID,Type,instance
+
+//standard object types we use								//						***250 Begin
+#define TR_ACCUMULATOR_OBJTYPE				23L
+#define TR_ANALOG_INPUT_OBJTYPE			0L
+#define TR_ANALOG_OUTPUT_OBJTYPE			1L
+#define TR_ANALOG_VALUE_OBJTYPE			2L
+#define TR_AVERAGING_OBJTYPE				18L
+#define TR_BINARY_INPUT_OBJTYPE			3L
+#define TR_BINARY_OUTPUT_OBJTYPE			4L
+#define TR_BINARY_VALUE_OBJTYPE			5L
+#define TR_CALENDAR_OBJTYPE				6L
+#define TR_COMMAND_OBJTYPE					7L
+#define TR_DEVICE_OBJTYPE					8L
+#define TR_EVENT_ENROLLMENT_OBJTYPE		9L
+#define TR_FILE_OBJTYPE					10L						
+#define TR_GROUP_OBJTYPE					11L
+#define TR_LIFE_SAFETY_POINT_OBJTYPE		21L
+#define TR_LIFE_SAFETY_ZONE_OBJTYPE		22L
+#define TR_LOOP_OBJTYPE					12L
+#define TR_MULTI_STATE_INPUT_OBJTYPE		13L
+#define TR_MULTI_STATE_OUTPUT_OBJTYPE		14L
+#define TR_MULTI_STATE_VALUE_OBJTYPE		19L
+#define TR_NOTIFICATION_CLASS_OBJTYPE		15L
+#define TR_PROGRAM_OBJTYPE					16L
+#define TR_PULSE_CONVERTER_OBJTYPE			24L
+#define TR_SCHEDULE_OBJTYPE				17L
+#define TR_TREND_OBJTYPE					20L
+
+
+//standard properties we use
+#define ACKED_TRANSITIONS				0
+#define ACK_REQUIRED					1
+#define ACTIVE_TEXT						4
+#define ALARM_VALUE						6
+#define ALLX							8
+#define APDU_SEGMENT_TIMEOUT			10
+//#define APDU_TIMEOUT					11
+#define APPLICATION_SOFTWARE_VERSION	12
+#define ARCHIVE							13					//						***250
+#define CHANGE_OF_STATE_COUNT 			15
+#define CHANGE_OF_STATE_TIME 			16
+
+#define DATABASE_REVISION				155					//						***002
+#define DAYLIGHT_SAVINGS_STATUS			24
+#define DEADBAND						25
+#define DESCRIPTION						28
+#define DEVICE_ADDRESS_BINDING			30
+#define EVENT_ENABLE					35
+#define EVENT_STATE						36
+#define EVENT_TIME_STAMPS				130
+#define FILE_ACCESS_METHOD				41					//						***250	
+#define FILE_SIZE						42					//						***250
+#define FILE_TYPE						43					//						***250
+#define FIRMWARE_REVISION				44
+#define HIGH_LIMIT						45
+#define INACTIVE_TEXT					46
+#define ISSUE_CONFIRMED_NOTIFICATIONS	51
+#define	LAST_RESTORE_TIME				157
+#define LIMIT_ENABLE					52
+#define LOCAL_DATE						56
+#define LOCAL_TIME						57
+#define LOCATION						58
+#define LOW_LIMIT						59
+#define MAX_APDU_LENGTH_ACCEPTED		62
+//#define MAX_INFO_FRAMES					63
+//#define MAX_MASTER						64
+#define MIN_PRES_VALUE					69
+#define MAX_PRES_VALUE					65
+#define MODEL_NAME						70
+#define MODIFICATION_DATE				71					//						***250
+#define NOTIFICATION_CLASS				17
+#define NOTIFY_TYPE						72
+#define NUMBER_OF_APDU_RETRIES			73
+#define NUMBER_OF_STATES				74
+#define OBJECT_IDENTIFIER				75
+#define OBJECT_LIST						76
+#define OBJECT_NAME						77
+#define OBJECT_TYPE						79
+#define OPTIONALX						80
+#define OUT_OF_SERVICE					81
+#define POLARITY						84
+#define PRESENT_VALUE					85
+#define PRIORITY						86
+#define PRIORITY_ARRAY					87
+#define PROCESS_IDENTIFIER				89
+#define PROFILE_NAME					168
+#define PROTOCOL_CONFORMANCE_CLASS		95
+#define PROTOCOL_OBJECT_TYPES_SUPPORTED	96
+#define PROTOCOL_REVISION				139
+#define PROTOCOL_SERVICES_SUPPORTED		97
+#define PROTOCOL_VERSION				98
+#define READ_ONLY						99					//						***016
+#define RECIPIENT						101
+#define RECIPIENT_LIST					102
+#define RECORD_COUNT					141					//						***250
+#define RELIABILITY						103					//						***032
+#define RELINQUISH_DEFAULT				104
+#define REQUIRED						105
+#define RESOLUTION						106
+#define SEGMENTATION_SUPPORTED			107
+#define STATE_TEXT						110
+#define STATUS_FLAGS					111
+#define SYSTEM_STATUS					112
+#define TIME_DELAY						113
+#define TIME_OF_STATE_COUNT_RESET 	    115
+#define	UNITSX							117
+#define UTC_OFFSET						119
+#define VENDOR_IDENTIFIER				120
+#define VENDOR_NAME						121
+#define COV_INCREAMENT					22
+#define ALARM_VALUES					7
+#define FAULT_VALUES					39		
+
+//Added for BACnet disgnostic information.
+#define BN_RCV_MSG_COUNT			600		
+#define BN_TRAN_MSG_COUNT			601		
+#define BN_ERROR_MSG_COUNT			602		
+#define HOST_REGISTER_ADDRESS		603
+#define IF_AV_OBJECT_32_BITS		604
+
+//Added for BACnet Schedule and Calender  Object
+#define NO_DAYS_IN_THE_WEEK 7
+#define MAX_DAILY_TIME_VALUES 4
+#define MAX_NO_OF_EXCEPTIONS_LOGGED 16
+#define MAX_NO_OF_REFERENCES 16
+#define MAX_BACNET_CALANDER_ENTRY 10
+#define MAX_SPECIAL_EVENT_TIME_VALUES 6
+
+#endif //BACNETAPPDEFINES_HPP__

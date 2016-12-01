@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Schema name="SchneiderISO_V45"/>
+  <UserDefinedValues>
+    <DefinedValue name="MaxCoplaMemoryForProfile" value="153600"/>
+    <DefinedValue name="MaxStringLength" value="32"/>
+    <DefinedValue name="MaxMSVStates" value="16"/>
+    <DefinedValue name="ProtocolVersion" value="1"/>
+    <DefinedValue name="ProtocolRevision" value="4"/>
+    <DefinedValue name="NumberOfTimeStamps" value="3"/>
+    <DefinedValue name="BacnetTimeStampType" value="2"/>
+    <DefinedValue name="BacnetTimeStampSequence" value="1"/>
+  </UserDefinedValues>
+  <DefaultValues>
+    <DefaultValue name="ProfileRevision" value="2"/>
+    <DefaultValue name="NumberOfAPDURetries" value="3"/>
+    <DefaultValue name="BACnetIPMaxAPDULengthAccepted" value="1476"/>
+    <DefaultValue name="BACnetMSTPMaxAPDULengthAccepted" value="480"/>
+  </DefaultValues>
+  <BACnetHostTypes>
+    <hostType order="0" name="TM168B21C"/>
+    <hostType order="1" name="TM168B23C"/>
+    <hostType order="2" name="TM168B23CS"/>
+    <hostType order="3" name="TM168D23C"/>
+    <hostType order="4" name="TM168D23CS"/>
+    <hostType order="5" name="TM168B29C"/>
+    <hostType order="6" name="TM168B29CS"/>
+    <hostType order="7" name="TM168D29C"/>
+    <hostType order="8" name="TM168D29CS"/>
+    <hostType order="9" name="TM168B39C"/>
+    <hostType order="10" name="TM168B39CS"/>
+    <hostType order="11" name="TM168D39C"/>
+    <hostType order="12" name="TM168D39CS"/>
+    <hostType order="13" name="TM168D23AHU01C"/>
+    <hostType order="14" name="TM168D29AHU01C"/>
+    <hostType order="15" name="TM168D23CHIL101C"/>
+    <hostType order="16" name="TM168D39CHIL201C"/>
+    <hostType order="17" name="TM168D29RACK01C"/>
+    <hostType order="18" name="TM168D39RACK01C"/>
+    <hostType order="19" name="TM168B23AHU01C"/>
+    <hostType order="20" name="TM168B29AHU01C"/>
+    <hostType order="21" name="TM168B23CHIL101C"/>
+    <hostType order="22" name="TM168B39CHIL201C"/>
+    <hostType order="23" name="TM168B29RACK01C"/>
+    <hostType order="24" name="TM168B39RACK01C"/>
+  </BACnetHostTypes>
+ </Settings>

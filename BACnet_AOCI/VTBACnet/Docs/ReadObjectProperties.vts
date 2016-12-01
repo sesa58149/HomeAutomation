@@ -1,0 +1,1458 @@
+ ;Read All Property Tests
+ ;-------------------------------------------------------------------------------------
+  SETUP ReadProperty Tests
+ ;-------------------------------------------------------------------------------------
+
+  IUT_DA = C0-A8-01-37-BA-C0
+  ACTIVENET = bip
+
+  OBJECT1 = (DEVICE, 481641)
+  OBJECT2 = (ACCUMULATOR, 1)
+  OBJECT3 = (ANALOG-INPUT, 1)
+  OBJECT4 = (ANALOG-OUTPUT, 1)
+  OBJECT5 = (ANALOG-VALUE, 1)
+  OBJECT6 = (AVERAGING, 1)
+  OBJECT7 = (BINARY-INPUT, 1)
+  OBJECT8 = (BINARY-OUTPUT, 1)
+  OBJECT9 = (BINARY-VALUE, 1)
+  OBJECT10 = (CALENDAR, 1)
+  OBJECT11 = (COMMAND, 1)
+  OBJECT12 = (EVENT-ENROLLMENT, 1)
+  OBJECT13 = (FILE, 1)
+  OBJECT14 = (FILE, 2)
+  OBJECT15 = (GROUP, 1)
+  OBJECT16 = (LIFE-SAFETY-POINT, 1)
+  OBJECT17 = (LIFE-SAFETY-ZONE, 1)
+  OBJECT18 = (LOOP, 1)
+  OBJECT19 = (MULTISTATE-INPUT, 1)
+  OBJECT20 = (MULTISTATE-OUTPUT, 1)
+  OBJECT21 = (MULTISTATE-VALUE, 1)
+  OBJECT22 = (NOTIFICATION-CLASS, 1)
+  OBJECT23 = (PROGRAM, 1)
+  OBJECT24 = (PULSE-CONVERTER, 1)
+  OBJECT25 = (SCHEDULE, 1)
+  OBJECT26 = (TREND-LOG, 1)
+
+ ;-------------------------------------------------------------------------------------
+  SECTION Read Properties of OBJECT1
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.1 - Read object-identifier
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, object-identifier
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, object-identifier
+	OpenTag 3
+		AL = {object-identifier}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.2 - Read object-name
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, object-name
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, object-name
+	OpenTag 3
+		AL = {object-name}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.3 - Read object-type
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, object-type
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, object-type
+	OpenTag 3
+		AL = {object-type}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.4 - Read system-status
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, system-status
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, system-status
+	OpenTag 3
+		AL = {system-status}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.5 - Read vendor-name
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, vendor-name
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, vendor-name
+	OpenTag 3
+		AL = {vendor-name}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.6 - Read vendor-identifier
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, vendor-identifier
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, vendor-identifier
+	OpenTag 3
+		AL = {vendor-identifier}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.7 - Read model-name
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, model-name
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, model-name
+	OpenTag 3
+		AL = {model-name}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.8 - Read firmware-revision
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, firmware-revision
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, firmware-revision
+	OpenTag 3
+		AL = {firmware-revision}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.9 - Read application-software-version
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, application-software-version
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, application-software-version
+	OpenTag 3
+		AL = {application-software-version}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.10 - Read location
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, location
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, location
+	OpenTag 3
+		AL = {location}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.11 - Read description
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, description
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, description
+	OpenTag 3
+		AL = {description}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.12 - Read protocol-version
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, protocol-version
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, protocol-version
+	OpenTag 3
+		AL = {protocol-version}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.13 - Read protocol-revision
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, protocol-revision
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, protocol-revision
+	OpenTag 3
+		AL = {protocol-revision}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.15 - Read protocol-services-supported
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, protocol-services-supported
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, protocol-services-supported
+	OpenTag 3
+		AL = {protocol-services-supported}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.16 - Read protocol-object-types-supported
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, protocol-object-types-supported
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, protocol-object-types-supported
+	OpenTag 3
+		AL = {protocol-object-types-supported}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.17 - Read object-list
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, object-list
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, object-list
+	OpenTag 3
+		AL = {object-list}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.18 - Read max-APDU-length-accepted
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, max-APDU-length-accepted
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, max-APDU-length-accepted
+	OpenTag 3
+		AL = {max-APDU-length-accepted}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.19 - Read segmentation-supported
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, segmentation-supported
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, segmentation-supported
+	OpenTag 3
+		AL = {segmentation-supported}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.20 - Read max-segments-accepted
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, max-segments-accepted
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, max-segments-accepted
+	OpenTag 3
+		AL = {max-segments-accepted}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.21 - Read vt-classes-supported
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, vt-classes-supported
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, vt-classes-supported
+	OpenTag 3
+		AL = {vt-classes-supported}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.22 - Read active-vt-sessions
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, active-vt-sessions
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, active-vt-sessions
+	OpenTag 3
+		AL = {active-vt-sessions}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.23 - Read local-time
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, local-time
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, local-time
+	OpenTag 3
+		AL = {local-time}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.24 - Read local-date
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, local-date
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, local-date
+	OpenTag 3
+		AL = {local-date}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.25 - Read utc-offset
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, utc-offset
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, utc-offset
+	OpenTag 3
+		AL = {utc-offset}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.26 - Read daylight-savings-status
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, daylight-savings-status
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, daylight-savings-status
+	OpenTag 3
+		AL = {daylight-savings-status}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.27 - Read apdu-segment-timeout
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, apdu-segment-timeout
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, apdu-segment-timeout
+	OpenTag 3
+		AL = {apdu-segment-timeout}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.28 - Read apdu-timeout
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, apdu-timeout
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, apdu-timeout
+	OpenTag 3
+		AL = {apdu-timeout}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.29 - Read number-of-APDU-retries
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, number-of-APDU-retries
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, number-of-APDU-retries
+	OpenTag 3
+		AL = {number-of-APDU-retries}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.30 - Read list-of-session-keys
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, list-of-session-keys
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, list-of-session-keys
+	OpenTag 3
+		AL = {list-of-session-keys}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.31 - Read time-synchronization-recipients
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, time-synchronization-recipients
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, time-synchronization-recipients
+	OpenTag 3
+		AL = {time-synchronization-recipients}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.32 - Read max-master
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, max-master
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, max-master
+	OpenTag 3
+		AL = {max-master}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.33 - Read max-info-frames
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, max-info-frames
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, max-info-frames
+	OpenTag 3
+		AL = {max-info-frames}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.34 - Read device-address-binding
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, device-address-binding
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, device-address-binding
+	OpenTag 3
+		AL = {device-address-binding}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.35 - Read database-revision
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, database-revision
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, database-revision
+	OpenTag 3
+		AL = {database-revision}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.36 - Read configuration-files
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, configuration-files
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, configuration-files
+	OpenTag 3
+		AL = {configuration-files}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.37 - Read last-restore-time
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, last-restore-time
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, last-restore-time
+	OpenTag 3
+		AL = {last-restore-time}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.38 - Read backup-failure-timeout
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, backup-failure-timeout
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, backup-failure-timeout
+	OpenTag 3
+		AL = {backup-failure-timeout}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.39 - Read active-cov-subscriptions
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, active-cov-subscriptions
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, active-cov-subscriptions
+	OpenTag 3
+		AL = {active-cov-subscriptions}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.40 - Read slave-proxy-enable
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, slave-proxy-enable
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, slave-proxy-enable
+	OpenTag 3
+		AL = {slave-proxy-enable}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.41 - Read auto-slave-discovery
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, auto-slave-discovery
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, auto-slave-discovery
+	OpenTag 3
+		AL = {auto-slave-discovery}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.42 - Read slave-address-binding
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, slave-address-binding
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, slave-address-binding
+	OpenTag 3
+		AL = {slave-address-binding}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.43 - Read manual-slave-address-binding
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, manual-slave-address-binding
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, manual-slave-address-binding
+	OpenTag 3
+		AL = {manual-slave-address-binding}
+	CloseTag 3
+    )
+
+ ;-------------------------------------------------------------------------------------
+  TEST#1.44 - Read profile-name
+  DEPENDENCIES None
+
+    SEND (
+	NETWORK = ACTIVENET
+	DA = IUT_DA
+	DER = TRUE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = Confirmed-Request
+	Service = ReadProperty
+	InvokeID = 1
+	SegMsg = 0
+	SegResp = 0
+	MaxResp = 1476
+	Object = 0, OBJECT1
+	Property = 1, profile-name
+    )
+
+    EXPECT (
+	NETWORK = ACTIVENET
+	SA = IUT_DA
+	DER = FALSE
+	BVLCI = ORIGINAL-UNICAST-NPDU
+	PDU = ComplexAck
+	Service = ReadProperty
+	Object = 0, OBJECT1
+	Property = 1, profile-name
+	OpenTag 3
+		AL = {profile-name}
+	CloseTag 3
+    )
+
+;---------------------- End of generated Read Property file ---------------------------

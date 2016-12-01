@@ -1,0 +1,14 @@
+1 How to get ASHIRE1.12  -- we have 1.4
+	
+2 Do we need to get some licence for development on top of PolarSoft code
+	
+3 Who will co-ordinate and pay for BTL cirtification cast
+	
+4 Do BACW need to work as A and B simultaniously -- Memory consumption
+
+DDXML schima ver 3.9 used -- 4.2 latest
+ How many exception_schedule object per Scheduler Object
+ What is the differnce between 3 calenobject	
+
+IR1 6 - 8 month
+IR2 need to look again.

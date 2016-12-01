@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchneiderElectricFpg</name>
+    </assembly>
+    <members>
+        <member name="T:SchneiderElectric.Fpg.Properties.StringResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SchneiderElectric.Fpg.Properties.StringResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SchneiderElectric.Fpg.Properties.StringResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SchneiderElectric.Fpg.Properties.StringResources.FPGHasShutdownAbruptlyReason">
+            <summary>
+              Looks up a localized string similar to FPG has shutdown abruptly. Reason : .
+            </summary>
+        </member>
+        <member name="T:SchneiderElectric.Fpg.FpgManager">
+            <summary>
+            FPG Manager. Entry class of FieldBus Profile Generator. Exposes functions for the outside world
+            to use FPG
+            </summary>
+        </member>
+        <member name="T:SchneiderElectric.Fpg.IFpgManager">
+            <summary>
+            FieldBus Profile Generator API
+            </summary>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.IFpgManager.ConvertDdxmlToBinary(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts the DDXML to binary.
+            Note for COM users: Method returns S_OK (0x00000000) on success and 0x80131500 on failure.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="binaryFolderPath">The binary folder path.</param>
+            <param name="coplaProfileName">Name of the copla profile.</param>
+            <param name="generateCompileTimeProfile">if set to <c>true</c> [generate compile time profile].</param>
+            <exception cref="T:SchneiderElectric.Fpg.FpgException">FPGException on Error. Check inner exception for more details</exception>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.IFpgManager.ConvertDdxmlToBinaryWithUserInterface(System.String,System.String,System.String)">
+            <summary>
+            Converts the DDXML to binary with user interface.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="binaryFolderPath">The binary folder path.</param>
+            <param name="coplaProfileName">Name of the copla profile.(eg. BACnetM168)</param>
+            <exception cref="T:SchneiderElectric.Fpg.FpgException">FPGException on Error. Check inner exception for more details</exception>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.IFpgManager.ShowFpgUserInterface">
+            <summary>
+            Shows the Fpg user interface.
+            </summary>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.IFpgManager.EditProfileProperty(System.String,System.String,System.String)">
+            <summary>
+            Edits a profile property.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="uniqueId">The unique id. (eg : parameterId)</param>
+            <param name="coplaProfileName">Name of the copla profile. (Eg : BACnetM168</param>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.IFpgManager.MergeDdxml(System.String,System.String,System.String,System.String)">
+            <summary>
+            Merges a new ddxml with an old one to create a merged DDXML
+            </summary>
+            <param name="ddxmlOldFilePath">The old DDXML file path.</param>
+            <param name="ddxmlNewFilePath">The new DDXML file path.</param>
+            <param name="ddxmlMergedFilePath">The merged DDXML file path.</param>
+            <param name="coplaProfileName">Name of the copla profile. (eg: BACnetM168)</param>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.FpgManager.ConvertDdxmlToBinary(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts the DDXML to binary.
+            Note for COM users: Method returns S_OK (0x00000000) on success and 0x80131500 on failure.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="binaryFolderPath">The binary folder path.</param>
+            <param name="coplaProfileName">Name of the copla profile.</param>
+            <param name="generateCompileTimeProfile">if set to <c>true</c> [generate compile time profile].</param>
+            <exception cref="T:SchneiderElectric.Fpg.FpgException">FPGException on Error. Check inner exception for more details</exception>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.FpgManager.ShowFpgUserInterface">
+            <summary>
+            Shows the Fpg user interface.
+            </summary>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.FpgManager.ConvertDdxmlToBinaryWithUserInterface(System.String,System.String,System.String)">
+            <summary>
+            Converts the DDXML to binary with user interface.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="binaryFolderPath">The binary folder path.</param>
+            <param name="coplaProfileName">Name of the copla profile.(eg. BACnetM168)</param>
+            <exception cref="T:SchneiderElectric.Fpg.FpgException">FPGException on Error. Check inner exception for more details</exception>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.FpgManager.EditProfileProperty(System.String,System.String,System.String)">
+            <summary>
+            Edits the profile property.
+            </summary>
+            <param name="ddxmlFilePath">The DDXML file path.</param>
+            <param name="uniqueId">The unique id.</param>
+            <param name="coplaProfileName">Name of the copla profile. (Eg : BACnetM168</param>
+        </member>
+        <member name="M:SchneiderElectric.Fpg.FpgManager.MergeDdxml(System.String,System.String,System.String,System.String)">
+            <summary>
+            Merges a new ddxml with an old one to create a merged DDXML
+            </summary>
+            <param name="ddxmlOldFilePath">The old DDXML file path.</param>
+            <param name="ddxmlNewFilePath">The new DDXML file path.</param>
+            <param name="ddxmlMergedFilePath">The merged DDXML file path.</param>
+            <param name="coplaProfileName">Name of the copla profile. (eg: BACnetM168)</param>
+        </member>
+    </members>
+</doc>
