@@ -168,12 +168,15 @@ void handleManualStart()
 	if( val == 0x00 && pinDebounce == 0 )
 	{		
 		lastVal = val;
-		val = (PIND & 0xE0);		/* PD7th bit master control */ 			
+		val = (PIND & 0xE0);		/* PD7th bit master control */ 		
+			
 		if((PIND & 0x60) != 0x60)   /*pd6,5 must be not be 11	-- tank already full */
 		{
+			
 			if( (val & 0x80) == 0)	/* start motor only if sump have water to avoid dry run*/
 			{
-				CNTRL_MOTOR0_ON();	
+				CNTRL_MOTOR0_ON();
+				//while(1);	
 			}		
 			pinDebounce = 1;
 		}

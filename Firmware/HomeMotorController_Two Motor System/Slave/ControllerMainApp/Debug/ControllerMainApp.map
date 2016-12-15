@@ -465,10 +465,10 @@ END GROUP
  *(.debug_frame)
  .debug_frame   0x00000000       0x84 ControllerMainApp.o
 
-.debug_str      0x00000000      0x30c
+.debug_str      0x00000000      0x2ff
  *(.debug_str)
- .debug_str     0x00000000      0x30c ControllerMainApp.o
-                                0x34a (size before relaxing)
+ .debug_str     0x00000000      0x2ff ControllerMainApp.o
+                                0x33d (size before relaxing)
 
 .debug_loc      0x00000000      0x12f
  *(.debug_loc)
