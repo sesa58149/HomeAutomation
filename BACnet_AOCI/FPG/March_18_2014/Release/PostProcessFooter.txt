@@ -1,0 +1,2 @@
+};
+FLASH_WORD dim_Profile1 = sizeof(Profile1);

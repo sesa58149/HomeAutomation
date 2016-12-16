@@ -1,0 +1,112 @@
+  
+  SETUP Positive ReadProperty Tests
+
+  
+  IUT_IP = 10.10.10.100:0xBAC0
+  TD_PORT = "bip"
+  
+  OBJECT1 = Device, 1967	; DEVICE OBJECT
+  OBJECT2 = analog-VALUE, 1	; Object which is the subject of the Read Prop tests
+  OBJECT3 = analog-INPUT, 1 	; Object which is the subject of the Read Prop tests
+  OBJECT4 = File, 104		; Object which is the subject of the Read Prop tests
+  OBJECT5 = binary-VALUE,1
+
+  INDEX0 = 0		; Index used in any test to read array length
+  INDEX1 = 1		; Array index for test #1g "Read a Single Element of an Array"
+  INDEX2 = 2		; Array index for test #1j "Read Property - Read Null Values"
+  INDEX3 = 3
+  INDEX4 = 4
+  INDEX5 = 5
+  
+SECTION ReadProperty Service Execution Tests
+
+ ;-------------------------------------------------------------------------------------
+  TEST #1a - Read Property of Type Object Identifier
+
+  -- Purpose: This test case verifies that the IUT can execute ReadProperty service
+  -- requests when the requested property is of type BACnetObjectIdentifier.
+
+  -- Test Steps:
+  --	1. VERIFY (Object, X), property value = (any value of type BACnetObjectIdentifier)
+ 
+  -- Passing Result: The IUT shall respond as indicated conveying the value 
+  -- specified in the EPICS.
+
+  DEPENDENCIES None
+
+  REFERENCE (B) ReadProperty Service and (T) Reading Object Identifiers
+
+  SEND (
+      NETWORK = TD_PORT
+      Da = IUT_IP
+      DER = TRUE
+      bvlci =ORIGINAL-UNICAST-NPDU   
+      PDU = Confirmed-Request
+      Service = ReadProperty
+      SegMsg = 0
+      SegResp = 0
+      MaxResp = 1470
+      InvokeID = 1
+      Object = 0, OBJECT1
+      Property = 1, Object-Identifier	; Type BACnetObjectIdentifier
+    )
+
+    EXPECT (
+      NETWORK = TD_PORT
+      DER = FALSE
+      Sa  = IUT_IP   
+      PDU = ComplexAck
+      bvlci =ORIGINAL-UNICAST-NPDU 
+      Service = ReadProperty
+      Object = 0, OBJECT1
+      Property = 1, Object-Identifier
+      OpenTag 3
+        AL = {Object-Identifier}
+--      OBJECTIDENTIFIER = OBJECT1     ; {Object-Identifier}
+      CloseTag 3
+    )
+
+;-------------------------------------------------------------------------------------
+  Test #1m - Read Property of Type Real
+
+  -- Purpose: This test case verifies that the IUT can execute ReadProperty service
+  -- requests when the requested property is of type Real. 
+
+  -- Test Step:
+  --	1. VERIFY (Object, X), property value = (any valid Real value)
+ 
+  -- Passing Result: The IUT shall respond with any valid value of type Real.
+
+  DEPENDENCIES None
+
+  REFERENCE (B) ReadProperty Service and (T) TBD   
+  SEND (
+      NETWORK = TD_PORT
+      bvlci=ORIGINAL-UNICAST-NPDU
+      Da = IUT_IP
+      DER = TRUE
+      PDU = Confirmed-Request
+      SegMsg=0
+      SegResp=0
+      MaxResp=1476
+      InvokeID=13
+      Service = ReadProperty
+      Object = 0, OBJECT2
+      Property = 1, Present-Value
+     )
+
+    EXPECT (
+      NETWORK = TD_PORT
+      Sa=IUT_IP
+      DER = FALSE
+      bvlci=ORIGINAL-UNICAST-NPDU
+      PDU = ComplexAck
+      Service = ReadProperty
+      Object = 0, OBJECT2
+      Property = 1, Present-Value
+      OpenTag 3
+        AL ={Present-Value}
+      CloseTag 3                                   
+    )
+
+    
